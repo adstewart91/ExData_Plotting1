@@ -90,18 +90,37 @@ power_consume_data <- power_consume_data %>% mutate(Date =
                                         new_date_time$day_time)
 
 ##      Let's Draw Some Plots!
-##      PLOT #3:
+##      PLOT #4:
 
 line_names <- c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 
-png(filename = "plot3.png", width = 480, height = 480)
+png(filename = "plot4.png", width = 480, height = 480)
 
+par(mfcol=c(2,2))
+
+## Upper left
+with(power_consume_data, plot(Date,Global_active_power, type = "l", 
+                              ylab = "Global Active Power",               
+                              xlab = ""))
+## Lower left
 with(power_consume_data, plot(Date,Sub_metering_1, type = "l", 
                 ylab = "Energy sub metering",               
                 xlab = ""))
 with(power_consume_data, lines(Date,Sub_metering_2, type = "l", col = "red"))
 with(power_consume_data, lines(Date,Sub_metering_3, type = "l", col = "blue"))
-legend("topright", legend = line_names, lty = c(1,1,1), 
-       col = c("black", "red", "blue"))
+legend("topright", legend = line_names, cex = 0.9, box.lwd = 0, lty = c(1,1,1), 
+       bg="transparent",col = c("black", "red", "blue"))
+
+## Upper right
+with(power_consume_data, plot(Date,Voltage, type = "l", 
+                              ylab = "Voltage",               
+                              xlab = "datetime"))
+
+## Lower right
+with(power_consume_data, plot(Date,Global_reactive_power, type = "l", 
+                              ylab = "Global_reactive_power",               
+                              xlab = "datetime"))
 
 dev.off()
+
+
