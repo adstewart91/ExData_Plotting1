@@ -1,13 +1,15 @@
-## Updated -- By Andrew D. Stewart
+# Updated -- By Andrew D. Stewart
 
 This branch contains each of the plot files (plot1.png, plot2.png, plot3.png, plot4.png),
 and the associated R Code (plot1.R, plot2.R, plot3.R, and plot4.R.).  The PNG files have
 a with a width of 480 pixels and a height of 480 pixels.
 
-• Each R code file should includes code for reading the data so that the plot can
-be fully reproduced and includes the code that creates the PNG file.
+• Each R code file includes code for reading the subset of the data so that the plot can
+be fully reproduced and includes the code that creates the PNG file.  The subset that
+is read-in to create the plots only covers 2 days worth of data per instructions below.
 
-• Each R code file is fully documented with comments and variable explainations
+• Each R code file is fully documented with comments and variable explainations --
+please refer to the code for an explaination of the variables.
 
 
 # Original Assingment Follows:
